@@ -1,0 +1,59 @@
+{
+	"gems" : [
+				{
+					"name" : "Vibhor Agarwal Gem",
+					"price" : 5.00,
+					"description" : "A unique and precious gems that has its own fragnance and quality. One of its own kind.",
+					"specification" : "Not Yet",
+					"image" : "gem1.png"
+				},
+
+				{
+					"name" : "Surbhit Agarwal Gem",
+					"price" : 4.88,
+					"description" : "A unique and precious gems that has its own fragnance and quality. One of its own kind.",
+					"specification" : "Not Yet",
+					"image" : "gem2.png"
+				},
+
+				{
+					"name" : "Swati Agarwal Gem",
+					"price" : 5.96,
+					"description" : "A unique and precious gems that has its own fragnance and quality. One of its own kind.",
+					"specification" : "Not Yet",
+					"image" : "gem3.png"
+				},
+
+				{
+					"name" : "Renu Agarwal Gem",
+					"price" : 10.00,
+					"description" : "A unique and precious gems that has its own fragnance and quality. One of its own kind.",
+					"specification" : "Not Yet",
+					"image" : "gem4.png"
+				},
+
+				{
+					"name" : "Tarun Sharma Gem",
+					"price" : 3.89,
+					"description" : "A unique and precious gems that has its own fragnance and quality. One of its own kind.",
+					"specification" : "Not Yet",
+					"image" : "gem5.gif"
+				},
+
+				{
+					"name" : "Naman Garg Gem",
+					"price" : 2.00,
+					"description" : "A unique and precious gems that has its own fragnance and quality. One of its own kind.",
+					"specification" : "Not Yet",
+					"image" : "gem6.png"
+				},
+
+				{
+					"name" : "Manjushree Gem",
+					"price" : 4.16,
+					"description" : "A unique and precious gems that has its own fragnance and quality. One of its own kind.",
+					"specification" : "Not Yet",
+					"image" : "gem7.png"
+				}
+	]
+}

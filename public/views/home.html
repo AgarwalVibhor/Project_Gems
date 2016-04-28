@@ -1,0 +1,72 @@
+<div class="container" data-ng-controller="HomeController">
+	<ul class="list-group">
+		<li class="list-group-item" data-ng-repeat="gem in gems">
+			<h3>{{ gem.name }}
+			<em class="pull-right">{{ gem.price | currency }}</em>
+			</h3>
+			<h3><img class="img-rounded img-responsive" 
+			data-ng-src="../assets/images/{{ gem.image }}" width="300px" height="300px" alt="{{ gem.name }}" /> 
+			</h3>  
+			<section>
+				<ul class="nav nav-pills">
+					<li data-ng-class="{ active : tab===1 }"><a href data-ng-click="tab=1">Description</a></li>
+					<li data-ng-class="{ active : tab===2 }"><a href data-ng-click="tab=2">Specifications</a></li>
+					<li data-ng-class="{ active : tab===3 }"><a href data-ng-click="tab=3; getReviews(gem.name);">Reviews</a></li>
+				</ul>
+				<div class="panel" data-ng-show="tab===1">
+					<h3>Description</h3>
+					<p>{{ gem.description }}</p>
+				</div>
+				<div class="panel" data-ng-show="tab===2">
+					<h3>Specifications</h3>
+					<p>{{ gem.specification }}</p>
+				</div>
+				<div class="panel" data-ng-show="tab===3">
+					<h3>Reviews</h3>
+					<form role="form" name="reviewForm" novalidate="">
+						<blockquote data-ng-repeat="review in reviews">
+						<b>{{ review.stars }}</b>
+						<br>
+						{{ review.reviewBody }}
+						<footer>{{ review.author }}</footer>
+						</blockquote>
+						<button type="reset" class="btn btn-primary" value="Add Review" data-ng-click="count=0; reviewForm.$valid=false;">Add a Review</button>
+						<br>
+						<br>
+						<div class="form-group">
+							<label for="name">Gem Name :</label>
+							<input type="text" class="form-control" name="name" id="name" placeholder="{{gem.name}}" value="{{gem.name}}" data-ng-model="name" disabled="true"></input>
+							
+						</div>
+						<div class="form-group">
+							<label for="Stars">Your Star Rating :</label>
+							<select class="form-control ng-dirty ng-invalid ng-valid" name="stars" id="stars" data-ng-model="stars" data-ng-change="setGemStars(gem.name, stars);" required="" >
+								<option value="0">--Select--</option>
+								<option value="1">1 Star</option>
+								<option value="2">2 Stars</option>
+								<option value="3">3 Stars</option>
+								<option value="4">4 Stars</option>
+								<option value="5">5 Stars</option>
+							</select>
+							
+						</div>
+						<div class="form-group">
+							<label for="Body">Your Review :</label>
+							<textarea class="form-control ng-dirty ng-invalid ng-valid" name="body" id="body" data-ng-model="body" placeholder="Your reviews about the product..." data-ng-change="setReview(body);" required=""></textarea>
+						
+						</div>
+						<div class="form-group">
+							<label for="author">Your Name :</label>
+							<input class="form-control ng-dirty ng-invalid ng-valid" name="author" id="author" placeholder="Your Name Here" data-ng-model="author" data-ng-change="setAuthor(author);" required="" />
+						</div>
+						
+						<button class="btn btn-primary" type="submit" value="Submit Review" data-ng-show="reviewForm.$valid" data-ng-click="submitReview();">Submit Review</button>
+						<div class="alert alert-success" data-ng-show="count === 1">
+							<strong>Success!</strong> The review has been added successfully.
+						</div>
+					</form>
+				</div>
+			</section>
+		</li>
+	</ul>
+</div>
